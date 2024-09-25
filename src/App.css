@@ -1,0 +1,34 @@
+/*
+  Styles for clock component. Clock centered on screen with round clock face surrounding the time.
+  By Kristoffer Bengtsson
+*/
+:root {
+  --clock-background-color: black;
+  --clock-foreground-color: orange;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clock-background-color);
+  color: white;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 8px solid var(--clock-foreground-color);
+  outline: 8px solid var(--clock-background-color);
+}
+
+.clock-time {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--clock-foreground-color);
+}
