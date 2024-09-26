@@ -1,6 +1,6 @@
 /*
+  Inlämningsuppgift 1, JavaScript 3, Kristoffer Bengtsson (FE23)
   Styles for clock component. Clock centered on screen with round clock face surrounding the time.
-  By Kristoffer Bengtsson
 */
 :root {
   --clock-background-color: black;

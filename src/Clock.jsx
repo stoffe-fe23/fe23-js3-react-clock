@@ -1,25 +1,24 @@
 /*
-    Clock component, display provided time. 
-    By Kristoffer Bengtsson
+    Inlämningsuppgift 1, JavaScript 3, Kristoffer Bengtsson (FE23)
+    Clock component, takes a date object property and displays its time.
 */
 
 
 export function Clock({ currentTime }) {
-
-    // Get time from timestamp in HH:MM:SS format. 
-    function getFormattedTime(dateObj = null, locale = "sv-SE") {
+    // Get time from a Date object and return as a string in HH:MM:SS format. 
+    function getFormattedTimeString(dateObj, locale = "sv-SE") {
         const formatOptions = {
             hour: "numeric",
             minute: "numeric",
             second: "numeric",
         };
         return new Intl.DateTimeFormat(locale, formatOptions).format(dateObj);
-        // return new Intl.DateTimeFormat(locale, formatOptions).format(new Date(timestamp));
     }
 
+    // Clock component JSX
     return (
         <div className="clock">
-            <div className="clock-time">{getFormattedTime(currentTime)}</div>
+            <div className="clock-time">{getFormattedTimeString(currentTime)}</div>
         </div>
     );
 }

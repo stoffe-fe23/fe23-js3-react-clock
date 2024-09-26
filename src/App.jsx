@@ -1,6 +1,6 @@
 /*
+  Inlämningsuppgift 1, JavaScript 3, Kristoffer Bengtsson (FE23)
     Main App component. 
-    By Kristoffer Bengtsson
 */
 import { useState, useEffect } from 'react';
 import './App.css';
@@ -16,7 +16,7 @@ function App() {
   useEffect(() => { setInterval(() => setClockTime(new Date(Date.now())), 1000); }, []);
 
 
-  // Component JSX
+  // App Component JSX
   return (
     <>
       <h1>Current Time</h1>
