@@ -9,23 +9,14 @@ import { Clock } from './Clock';
 function App() {
   // State variable to keep the time to display, defaults to current time.
   const [clockTime, setClockTime] = useState(() => {
-    return getFormattedTime();
+    return new Date(Date.now());
   });
 
   // Start interval timer when app starts, triggering callback every second updating the time variable. 
-  useEffect(() => { setInterval(() => setClockTime(getFormattedTime()), 1000); }, []);
+  useEffect(() => { setInterval(() => setClockTime(new Date(Date.now())), 1000); }, []);
 
-  // Get current time in HH:MM:SS format. 
-  function getFormattedTime(dateObj = null, locale = "sv-SE") {
-    const formatOptions = {
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-    };
-    return new Intl.DateTimeFormat(locale, formatOptions).format(dateObj ?? new Date(Date.now()));
-  }
 
-  // Component
+  // Component JSX
   return (
     <>
       <h1>Current Time</h1>
