@@ -15,7 +15,7 @@ export function Clock({ currentTime }) {
         return new Intl.DateTimeFormat(locale, formatOptions).format(dateObj);
     }
 
-    // Clock component JSX
+    // Clock component JSX - display the time
     return (
         <div className="clock">
             <div className="clock-time">{getFormattedTimeString(currentTime)}</div>

@@ -14,7 +14,6 @@ function App() {
 
     // Start interval timer when App component first loads, triggering callback every second updating the time variable. 
     // Put in useEffect-hook to prevent another new interval timer getting created whenever the component rerenders. 
-
     useEffect(() => {
         const clockTimer = setInterval(() => setClockTime(new Date()), 1000);
 
