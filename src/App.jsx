@@ -14,20 +14,14 @@ function App() {
 
     // Start interval timer when App component first loads, triggering callback every second updating the time variable. 
     // Put in useEffect-hook to prevent another new interval timer getting created whenever the component rerenders. 
+
     useEffect(() => {
-        console.log("DEBUG: EFFECT");
-        const clockTimer = setInterval(() => {
-            const newTime = new Date();
-            setClockTime(newTime);
-            console.log("DEBUG: INTERVAL:", clockTimer, newTime);
-        }, 1000);
+        const clockTimer = setInterval(() => setClockTime(new Date()), 1000);
 
         // Cleanup function to stop interval timer when the App component is unmounted/removed from DOM.     
-        return () => {
-            console.log("DEBUG: CLEANUP");
-            clearInterval(clockTimer);
-        };
+        return () => clearInterval(clockTimer);
     }, []);
+
 
     // App Component JSX
     return (
